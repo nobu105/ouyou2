@@ -4,6 +4,8 @@ class BooksController < ApplicationController
   def show
     redirect_to books_url if @book.blank?
     @book = Book.find(params[:id])
+    @book_comment = BookComment.new
+    @favorite = Favorite.new
   end
 
   def set_book
